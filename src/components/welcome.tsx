@@ -15,7 +15,7 @@ const Welcome: FC<WelcomeProps> = ({ code, setCode, setShowMessage, voyagers, se
   const welcome = "images/Welcome.png"
 
   function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
-    setCode(event.target.value)
+    setCode(Number(event.target.value))
   }
 
   function handleSubmit(event: React.FormEvent) {
