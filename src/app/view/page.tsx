@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useEffect, useState } from 'react';
-import { collection, getDocs } from 'firebase/firestore';
+import { collection, getDocs } from '@firebase/firestore';
 import { db } from '@/firebase-config';
 
 const ViewVoyagers = () => {
@@ -11,7 +11,7 @@ const ViewVoyagers = () => {
     const fetchVoyagers = async () => {
       const voyagersCollectionRef = collection(db, 'voyagers');
       const voyagersSnapshot = await getDocs(voyagersCollectionRef);
-      const voyagersData = voyagersSnapshot.docs.map((doc) => ({
+      const voyagersData = voyagersSnapshot.docs.map((doc: { id: any; data: () => any; }) => ({
         id: doc.id,
         ...doc.data(),
       }));
