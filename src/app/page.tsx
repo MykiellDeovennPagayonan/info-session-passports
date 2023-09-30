@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Welcome from '@/components/welcome'
 import Message from '@/components/message'
 import { db } from "@/firebase-config"
-import { collection, getDocs } from 'firebase/firestore'
+import { collection, getDocs } from '@firebase/firestore'
 
 export default function Home() {
   const [voyagers, setVoyagers] = useState<any>([])
